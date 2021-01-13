@@ -1,19 +1,19 @@
-# Termux Bot Whatsapp by MrDevils
+# Termux Bot Whatsapp V2 by MrDevils
 
 <p align="center">
 <img src="https://d.top4top.io/p_1837luigd0.gif" alt="GIF" width="128" height="128"/>
 </p>
 <p align="center">
-<a href="#"><img title="X BOT" src="https://img.shields.io/badge/XBot-blue?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="X BOT" src="https://img.shields.io/badge/XBotV2-blue?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
 <a href="https://github.com/adimas999"><img title="Author" src="https://img.shields.io/badge/Author-MrDevils-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 <a href="https://github.com/adimas999/followers"><img title="Followers" src="https://img.shields.io/github/followers/adimas999?color=red&style=flat-square"></a>
-<a href="https://github.com/adimas999/megumikato2/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/adimas999/BotV1?color=blue&style=flat-square"></a>
-<a href="https://github.com/adimas999/megumikato2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/adimas999/BotV1?color=red&style=flat-square"></a>
-<a href="https://github.com/adimas999/megumikato2/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/adimas999/BotV1?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/adimas999/megumikato2/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/adimas999/BotV2?color=blue&style=flat-square"></a>
+<a href="https://github.com/adimas999/megumikato2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/adimas999/BotV2?color=red&style=flat-square"></a>
+<a href="https://github.com/adimas999/megumikato2/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/adimas999/BotV2?label=Watchers&color=blue&style=flat-square"></a>
 </p>
 <p align='center'>
    <a href="https://wa.me/6285939888897"><img height="30" src="https://c.top4top.io/p_1837yybbf0.jpeg"></a>&nbsp;&nbsp;
