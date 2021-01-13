@@ -26,7 +26,7 @@
 #### This script is open to anyone! If you want to add commands, please contribute / pull request! Buying and selling scripts is prohibited!
 - Change [ownerNumber](https://github.com/adimas999/BotV2/blob/b304c9ebb31efff1fa91570ff3386cb42c47f9d2/index.js#L221) in index.js to be your number
 ownerNumber = "6282334297175@s.whatsapp.net"
-- Change [BotInfo](https://github.com/adimas999/BotV1/blob/99d2a5ce3b800f76d8cb6be90cb0f0b1a99a7a67/index.js#L49) in index.js to be your bot name
+- Change [BotInfo](https://github.com/adimas999/BotV2/blob/fbd8e4ae0a3b51dd6eecac7bd225ff8ed2650316/index.js#L29) in index.js to be your bot name
 - Change [Donasi](https://github.com/adimas999/BotV1/blob/main/lib/donasi.js) in /lib/donasi.js to be your number
 
 ## Contact
