@@ -130,7 +130,7 @@ function kyun(seconds){
 const client = new WAConnection()
    client.on('qr', qr => {
    qrcode.generate(qr, { small: true })
-   console.log(color('[','white'),color('∆','red'),color(']','white'),color('qr already scan.subscribe','white'),color('YOU','red'),color('TUBE','white'),color('ampibi gaming','yellow'))
+   console.log(color('[','white'),color('∆','red'),color(']','white'),color('qr already scan.Support','white'),color('My','red'),color('Github','white'),color('https://github.com/adimas999','yellow'))
 })
 
 client.on('credentials-updated', () => {
