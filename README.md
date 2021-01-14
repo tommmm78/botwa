@@ -40,7 +40,7 @@ Clone this project
 
 ```bash
 > pkg install git
-> git clone https://github.com/adimas999/BotV1
+> git clone https://github.com/adimas999/BotV2
 > cd botwasapv2-main
 ```
 
