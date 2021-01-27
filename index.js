@@ -891,8 +891,6 @@ client.on('group-participants-update', async (anu) => {
 					break
                  case 'nulis':
 					if (args.length < 1) return reply('Yang mau di tulis apaan?')
-                                        if (!isRegister) return reply(mess.only.daftarB)
-                                        if (isLimit(sender)) return reply(ind.limitend(pusname))
 					teks = body.slice(7)
 					reply(mess.wait)
 					anu = await fetchJson(`https://tools.zone-xsec.com/api/nulis.php?q=${teks}`, {method: 'get'})
