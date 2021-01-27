@@ -439,7 +439,7 @@ client.on('group-participants-update', async (anu) => {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6282334297175@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('6283898698875@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
                     break
                 case 'ssweb':
