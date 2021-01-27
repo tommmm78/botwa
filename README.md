@@ -1,20 +1,20 @@
 # Termux Bot Whatsapp by Zhirrr
 
 <p align="center">
-<a href="#"><img title="BOT WA" src="https://img.shields.io/badge/Bot Wa-blue?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="BOT WHATSAPP" src="https://img.shields.io/badge/Bot Whatsapp-blue?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/adimas999"><img title="Author" src="https://img.shields.io/badge/Author-Zhirrr-orange.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/Zhirrr"><img title="Author" src="https://img.shields.io/badge/Author-Zhirrr-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://github.com/adimas999/followers"><img title="Followers" src="https://img.shields.io/github/followers/adimas999?color=red&style=flat-square"></a>
-<a href="https://github.com/adimas999/megumikato2/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/adimas999/BotV2?color=blue&style=flat-square"></a>
-<a href="https://github.com/adimas999/megumikato2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/adimas999/BotV2?color=red&style=flat-square"></a>
-<a href="https://github.com/adimas999/megumikato2/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/adimas999/BotV2?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/followers"><img title="Followers" src="https://img.shields.io/github/followers/adimas999?color=red&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/megumikato2/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/adimas999/BotV2?color=blue&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/megumikato2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/adimas999/BotV2?color=red&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/megumikato2/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/adimas999/BotV2?label=Watchers&color=blue&style=flat-square"></a>
 </p>
 <p align='center'>
    <a href="https://wa.me/6283898698875"><img height="30" src="https://c.top4top.io/p_1837yybbf0.jpeg"></a>&nbsp;&nbsp;
-   <a href="https://instagram.com/adimas_shadoet"><img height="30" src="https://raw.githubusercontent.com/TobyG74/TobyG74/main/instagram.jpg"></a>
+   <a href="https://instagram.com/zhirr_ajalah"><img height="30" src="https://raw.githubusercontent.com/TobyG74/TobyG74/main/instagram.jpg"></a>
 </P>
 </P>
 
