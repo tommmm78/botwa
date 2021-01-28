@@ -561,7 +561,14 @@ client.on('group-participants-update', async (anu) => {
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/wiki?q=${tels}&apikey=BotWeA`, {method: 'get'})
 					reply(anu.result)
                                         await limitAdd(sender)
-					break	
+					break
+		case 'wikien':
+					if (args.length < 1) return reply('Kata kunci nya mana kak?')
+					tels = body.slice(8)
+					anu = await fetchJson(`https://arugaz.my.id/api/edu/enwiki?query=${tels}`, {method: 'get'})
+					reply(anu.result)
+                                        await limitAdd(sender)
+					break		
 				case 'ocr': 
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
