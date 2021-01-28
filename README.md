@@ -7,10 +7,10 @@
 <a href="https://github.com/Zhirrr"><img title="Author" src="https://img.shields.io/badge/Author-Zhirrr-orange.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
-<a href="https://github.com/Zhirrr/followers"><img title="Followers" src="https://img.shields.io/github/followers/adimas999?color=red&style=flat-square"></a>
-<a href="https://github.com/Zhirrr/megumikato2/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/adimas999/BotV2?color=blue&style=flat-square"></a>
-<a href="https://github.com/Zhirrr/megumikato2/network/members"><img title="Forks" src="https://img.shields.io/github/forks/adimas999/BotV2?color=red&style=flat-square"></a>
-<a href="https://github.com/Zhirrr/megumikato2/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/adimas999/BotV2?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/followers"><img title="Followers" src="https://img.shields.io/github/followers/Zhirrr?color=red&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Zhirrr/wabot?color=blue&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Zhirrr/wabot?color=red&style=flat-square"></a>
+<a href="https://github.com/Zhirrr/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Zhirrr/wabot?label=Watchers&color=blue&style=flat-square"></a>
 </p>
 <p align='center'>
    <a href="https://wa.me/6283898698875"><img height="30" src="https://c.top4top.io/p_1837yybbf0.jpeg"></a>&nbsp;&nbsp;
@@ -58,5 +58,4 @@ after running it you need to scan the qr
 
 ## 🙏 Big Special Thanks To
 
-* [`MrDevil`](https://github.com/adimas999) 
 * [`Mhankbarbar`](https://github.com/MhankBarBar) 
