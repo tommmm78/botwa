@@ -492,10 +492,64 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-                case 'anjing':
-                   if (!isGroup) return reply(mess.only.group)
-                   if (!isNsfw) return reply('nsfw gak aktif')
-					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anjing`, {method: 'get'})
+                case 'kucing':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=kucing`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'makanan':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=makanan`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'minuman':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=minuman`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'guitar':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=guitar`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'komputer':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=komputer`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'rumah':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=rumah`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'mobil':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=mobil`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'motor':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=motor`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
