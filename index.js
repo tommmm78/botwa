@@ -590,7 +590,7 @@ client.on('group-participants-update', async (anu) => {
 					reply(teks.trim())
                                         await limitAdd(sender)
 					break
-                case 'quran':
+                case 'randomquran':
 					anu = await fetchJson(`https://api.banghasan.com/quran/format/json/acak`, {method: 'get'})
 					quran = `${anu.acak.ar.teks}\n\n${anu.acak.id.teks}\nQ.S ${anu.surat.nama} ayat ${anu.acak.id.ayat}`
 					client.sendMessage(from, quran, text, {quoted: mek})
