@@ -603,21 +603,27 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, video, {quoted: mek, caption: teks})
 					break
                 case 'ig':
-					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta?url=${args[0]}`, {method: 'get'})
+					if (args.length < 1) return reply('Username Nya Siapa OM?')
+					teks = body.slice(4)
+					reply('Tunggu Ya Kak')
+					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta?url=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					thumb = await getBuffer(anu.resource.url)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: 'Nih Mank'})
+					buff = await getBuffer(anu.resource.url)
+					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
 					buffer = await getBuffer(anu.resource.url)
 					client.sendMessage(from, buffer, video, {quoted: mek, caption: 'Nih Mank'})
 					break
                 case 'igpost':
-					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta_v2?username=${args[0]}`, {method: 'get'})
+					if (args.length < 1) return reply('Username Nya Siapa OM?')
+					teks = body.slice(8)
+					reply('Tunggu Ya Kak')
+					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta_v2?username=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					thumb = await getBuffer(anu.resource.url)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: 'Nih Mank'})
+					buff = await getBuffer(anu.resource.url)
+					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
 					buffer = await getBuffer(anu.resource.url)
 					client.sendMessage(from, buffer, video, {quoted: mek, caption: 'Nih Mank'})
-					break
+					 break
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
