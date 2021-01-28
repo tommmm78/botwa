@@ -58,4 +58,5 @@ after running it you need to scan the qr
 
 ## 🙏 Big Special Thanks To
 
-* [`Mhankbarbar`](https://github.com/MhankBarBar) 
+* [`Mhankbarbar`](https://github.com/MhankBarBar)
+* [`ArugaZ`](https://github.com/ArugaZ) 
