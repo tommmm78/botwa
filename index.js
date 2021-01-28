@@ -366,17 +366,17 @@ client.on('group-participants-update', async (anu) => {
 					var bg = gh.split("|")[2];
 					const pref = `Usage: \n${prefix}quotemaker teks|watermark|theme\n\nEx :\n${prefix}quotemaker ini contoh|bicit|random`
 					if (args.length < 1) return reply(pref)
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://terhambar.com/aw/qts/?kata=${quote}&author=${wm}&tipe=${bg}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, image, {caption: 'Nih anjim', quoted: mek})
+					client.sendMessage(from, buffer, image, {caption: 'Nih Mank', quoted: mek})
 					break
                  case 'phlogo':
 					var gh = body.slice(9)
 					var gbl1 = gh.split("|")[0];
 					var gbl2 = gh.split("|")[1];
 					if (args.length < 1) return reply('Teksnya mana um')
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/textpro?theme=pornhub&text1=${gbl1}&text2=${gbl2}`, {method: 'get'})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
@@ -402,7 +402,7 @@ client.on('group-participants-update', async (anu) => {
 				   client.sendMessage(from, buf, image, { quoted: mek, caption: `${texs}` })
 				break
                 case 'imoji':
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/emoji2png?emoji=`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					buffer = await getBuffer(anu.result)
@@ -445,7 +445,7 @@ client.on('group-participants-update', async (anu) => {
                 case 'ssweb':
 					if (args.length < 1) return reply('Urlnya mana om')
 					teks = body.slice(7)
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/screenshotweb?url=${teks}`)
 					buff = await getBuffer(anu.gambar)
 					client.sendMessage(from, buff, image, {quoted: mek})
@@ -486,7 +486,7 @@ client.on('group-participants-update', async (anu) => {
                    if (!isGroup) return reply(mess.only.group)
                    if (!isNsfw) return reply('nsfw gak aktif')
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=pokemon`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -494,7 +494,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'kucing':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=kucing`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -502,7 +502,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		case 'makanan':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=makanan`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -510,7 +510,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		case 'minuman':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=minuman`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -518,7 +518,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		case 'guitar':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=guitar`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -526,7 +526,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		case 'komputer':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=komputer`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -534,7 +534,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		case 'rumah':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=rumah`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -542,7 +542,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		case 'mobil':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=mobil`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -550,7 +550,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 		case 'motor':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=motor`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -602,16 +602,23 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result.url)
 					client.sendMessage(from, buffer, video, {quoted: mek, caption: teks})
 					break
-                case 'ig':
-					if (args.length < 1) return reply('Username Nya Siapa OM?')
+                case 'igpoto':
+					if (args.length < 1) return reply('Urlnya Mana Om?')
 					teks = body.slice(4)
 					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta?url=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					buff = await getBuffer(anu.resource.url)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
-					buffer = await getBuffer(anu.resource.url)
-					client.sendMessage(from, buffer, video, {quoted: mek, caption: 'Nih Mank'})
+					break
+                case 'igvid':
+					if (args.length < 1) return reply('Urlnya Mana Om?')
+					teks = body.slice(4)
+					reply('Tunggu Ya Kak')
+					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta?url=${teks}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					buff = await getBuffer(anu.resource.url)
+					client.sendMessage(from, buff, video, {quoted: mek, caption: 'Nih Mank'})
 					break
                 case 'igpost':
 					if (args.length < 1) return reply('Username Nya Siapa OM?')
@@ -621,8 +628,6 @@ client.on('group-participants-update', async (anu) => {
 					if (anu.error) return reply(anu.error)
 					buff = await getBuffer(anu.resource.url)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
-					buffer = await getBuffer(anu.resource.url)
-					client.sendMessage(from, buffer, video, {quoted: mek, caption: 'Nih Mank'})
 					 break
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
@@ -705,7 +710,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'tomp3':
 					if (!isQuotedVideo) return reply('❌ reply videonya um ❌')
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
 					ran = getRandom('.mp4')
@@ -719,7 +724,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                  case 'wallprogramming':
 					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Programming.json`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -727,7 +732,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'wallcyberspace':
 					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/CyberSpace.json`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -735,7 +740,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'wallgame':
 					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Game%20Wallp.json`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -743,7 +748,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'wallmuslim':
 					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Islamic.json`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -751,7 +756,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'wallmountain':
 					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Mountain.json`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -759,7 +764,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'walltechnology':
 					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Technology.json`, {method: 'get'})
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
 					pok = await getBuffer(nimek)
@@ -811,7 +816,7 @@ client.on('group-participants-update', async (anu) => {
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
-						reply(mess.wait)
+						reply('Tunggu Ya Kak')
 						await recognize(media, {lang: 'eng+ind', oem: 1, psm: 3})
 							.then(teks => {
 								reply(teks.trim())
@@ -856,7 +861,7 @@ client.on('group-participants-update', async (anu) => {
 						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						const media = await client.downloadAndSaveMediaMessage(encmedia)
 						ran = getRandom('.webp')
-						reply(mess.wait)
+						reply('Tunggu Ya Kak')
 						await ffmpeg(`./${media}`)
 							.inputFormat(media.split('.')[1])
 							.on('start', function (cmd) {
@@ -922,7 +927,7 @@ client.on('group-participants-update', async (anu) => {
 					try {
 						if (args.length < 1) return client.sendMessage(from, '𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝗺𝗮𝗻𝗮 ?', text, {quoted: mek})
 						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
-						reply(mess.wait)
+						reply('Tunggu Ya Kak')
 						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
 						buffer = await getBuffer(user.avatarLarger)
 						client.sendMessage(from, buffer, image, {quoted: mek, caption: teks})
@@ -934,11 +939,11 @@ client.on('group-participants-update', async (anu) => {
                 case 'pin':
 					if (args.length < 1) return reply('Urlnya Mana Um?')
 					teks = body.slice(5)
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/pinterest?url=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					buff = await getBuffer(anu.result)
-					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Anjim'})
+					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
                                         await limitAdd(sender)
 					 break
 				case 'fitnah':	
@@ -1159,7 +1164,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'toimg':
 					if (!isQuotedSticker) return reply('𝗥𝗲𝗽𝗹𝘆/𝘁𝗮𝗴 𝘀𝘁𝗶𝗰𝗸𝗲𝗿 !')
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					media = await client.downloadAndSaveMediaMessage(encmedia)
 					ran = getRandom('.png')
@@ -1174,11 +1179,11 @@ client.on('group-participants-update', async (anu) => {
                  case 'nulis':
 					if (args.length < 1) return reply('Yang mau di tulis apaan?')
 					teks = body.slice(7)
-					reply(mess.wait)
+					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://tools.zone-xsec.com/api/nulis.php?q=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					buff = await getBuffer(anu.image)
-					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Anjim'})
+					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
                                         await limitAdd(sender)
 					 break
                  case 'simi':
@@ -1274,7 +1279,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'wait':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-						reply(mess.wait)
+						reply('Tunggu Ya Kak')
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						media = await client.downloadMediaMessage(encmedia)
 						await wait(media).then(res => {
