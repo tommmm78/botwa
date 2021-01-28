@@ -674,6 +674,38 @@ client.on('group-participants-update', async (anu) => {
 						fs.unlinkSync(ran)
 					})
 					break
+                 case 'wallprogramming':
+					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Programming.json`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+                case 'wallcyberspace':
+					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/CyberSpace.json`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+                case 'wallgame':
+					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Game%20Wallp.json`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+                case 'wallmuslim':
+					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Islamic.json`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
                 case 'text3d':
               	    if (args.length < 1) return reply('teksnya mana kak?')
                     teks = `${body.slice(8)}`
@@ -867,6 +899,16 @@ client.on('group-participants-update', async (anu) => {
                case 'faktaunik':
                anu = await fetchJson(`https://arugaz.my.id/api/random/text/katabijak`, {method: 'get'})
                reply(anu.result)
+               await limitAdd(sender)
+                break
+                case 'kodeabsen':
+               anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Absen.json`, {method: 'get'})
+               reply(anu.absen)
+               await limitAdd(sender)
+                break
+                 case 'nis279':
+               anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Nis.json`, {method: 'get'})
+               reply(anu.absen)
                await limitAdd(sender)
                 break
                  case 'linkgc':
