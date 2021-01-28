@@ -581,6 +581,53 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 					break
+                case 'trendtwit':
+					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
+					teks = '=================\n'
+					for (let i of data.result) {
+						teks += `*Hastag* : ${i.hastag}\n*link* : ${i.link}\n*rank* : ${i.rank}\n*Tweet* : ${i.tweet}\n=================\n`
+					}
+					reply(teks.trim())
+                                        await limitAdd(sender)
+					break
+                case 'quran':
+					anu = await fetchJson(`https://api.banghasan.com/quran/format/json/acak`, {method: 'get'})
+					quran = `${anu.acak.ar.teks}\n\n${anu.acak.id.teks}\nQ.S ${anu.surat.nama} ayat ${anu.acak.id.ayat}`
+					client.sendMessage(from, quran, text, {quoted: mek})
+					break
+                case 'infocuaca':
+                   tels = body.slice(11)
+                   anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cuaca?wilayah=${tels}&apikey=BotWeA`, {method: 'get'})
+                   if (anu.error) return reply(anu.error)
+                   hasil = ` *Tempat : ${anu.tempat}\nCuaca : ${anu.cuaca}\nAngin : ${anu.angin}\nSuhu : ${anu.suhu}\nKelembapan : ${anu.kelembapan}`
+                   client.sendMessage(from, hasil, text, {quoted: mek})
+                   await limitAdd(sender)
+                   break
+                case 'cekganteng':
+					ganteng = body.slice(1)
+					const gan =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
+					const teng = gan[Math.floor(Math.random() * gan.length)]
+					client.sendMessage(from, 'Pertanyaan : *'+ganteng+'*\n\nJawaban : '+ teng+'%', text, { quoted: mek })
+					break
+                case 'cekcantik':
+					cantik = body.slice(1)
+					const can =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
+					const tik = can[Math.floor(Math.random() * can.length)]
+					client.sendMessage(from, 'Pertanyaan : *'+cantik+'*\n\nJawaban : '+ tik+'%', text, { quoted: mek })
+					break
+                case 'watak':
+					watak = body.slice(1)
+					const wa =['peny ayang','pem urah','Pem arah','Pem aaf','Pen urut','Ba ik','bap eran','Baik Hati','peny abar','Uw u','top deh, poko knya','Suka Memb antu']
+					const tak = wa[Math.floor(Math.random() * wa.length)]
+					client.sendMessage(from, 'Pertanyaan : *'+watak+'*\n\nJawaban : '+ tak, text, { quoted: mek })
+                                        await limitAdd(sender)
+				    break
+                case 'hobby':
+					hobby = body.slice(1)
+					const hob =['Memasak','Membantu Atok','Mabar','Nobar','Sosmedtan','Membantu Orang lain','Nonton Anime','Nonton Drakor','Naik Motor','Nyanyi','Menari','Bertumbuk','Menggambar','Foto fotoan Ga jelas','Maen Game','Berbicara Sendiri']
+					const by = hob[Math.floor(Math.random() * hob.length)]
+					client.sendMessage(from, 'Pertanyaan : *'+hobby+'*\n\nJawaban : '+ by, text, { quoted: mek })
+					break
                 case 'text3d':
               	    if (args.length < 1) return reply('teksnya mana kak?')
                     teks = `${body.slice(8)}`
