@@ -679,6 +679,27 @@ client.on('group-participants-update', async (anu) => {
 						reply('[𝗘𝗥𝗥𝗢𝗥] 𝗸𝗲𝗺𝘂𝗻𝗴𝗸𝗶𝗻𝗮𝗻 𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝘁𝗶𝗱𝗮𝗸 𝘃𝗮𝗹𝗶𝗱')
 					}
 					break
+               case 'tiktokdown':
+					if (args.length < 1) return reply('Urlnya mana um?')
+					if(!isUrl(args[0]) && !args[0].includes('tiktod')) return reply(mess.error.Iv)
+					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${args[0]}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `*Title* : ${anu.title}`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
+					break
+                case 'pin':
+					if (args.length < 1) return reply('Urlnya Mana Um?')
+					teks = body.slice(5)
+					reply(mess.wait)
+					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/pinterest?url=${teks}`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					buff = await getBuffer(anu.result)
+					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Anjim'})
+                                        await limitAdd(sender)
+					 break
 				case 'fitnah':	
 				case 'fake':          
                if (!isGroup) return reply(mess.only.group)
@@ -896,7 +917,7 @@ client.on('group-participants-update', async (anu) => {
 					anu = await fetchJson(`https://tools.zone-xsec.com/api/nulis.php?q=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					buff = await getBuffer(anu.image)
-					client.sendMessage(from, buff, image, {quoted: mek, caption: mess.success})
+					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Anjim'})
                                         await limitAdd(sender)
 					 break
                  case 'simi':
