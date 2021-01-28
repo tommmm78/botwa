@@ -596,10 +596,10 @@ client.on('group-participants-update', async (anu) => {
                 case 'tiktokmp4':
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `*Title* : ${anu.title}`
-					thumb = await getBuffer(anu.thumb)
+					teks = `*Title* : ${anu.result.title}`
+					thumb = await getBuffer(anu.result.thumb)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.url)
+					buffer = await getBuffer(anu.result.url)
 					client.sendMessage(from, buffer, video, {quoted: mek, caption: teks})
 					break
                 case 'trendtwit':
