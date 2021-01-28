@@ -680,16 +680,15 @@ client.on('group-participants-update', async (anu) => {
 					}
 					break
                case 'tiktokdown':
-					if (args.length < 1) return reply('Urlnya mana um?')
-					if(!isUrl(args[0]) && !args[0].includes('tiktod')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${args[0]}`, {method: 'get'})
+					if (args.length < 1) return reply('Urlnya Mana Um?')
+					teks = body.slice(12)
+					reply(mess.wait)
+					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `*Title* : ${anu.title}`
-					thumb = await getBuffer(anu.thumb)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-					break
+					buff = await getBuffer(anu.url)
+					client.sendMessage(from, buff, video, {quoted: mek, caption: 'Nih Anjim'})
+                                        await limitAdd(sender)
+					 break
                 case 'pin':
 					if (args.length < 1) return reply('Urlnya Mana Um?')
 					teks = body.slice(5)
