@@ -604,7 +604,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'igpoto':
 					if (args.length < 1) return reply('Urlnya Mana Om?')
-					teks = body.slice(4)
+					teks = body.slice(8)
 					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta?url=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -613,7 +613,7 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'igvid':
 					if (args.length < 1) return reply('Urlnya Mana Om?')
-					teks = body.slice(4)
+					teks = body.slice(7)
 					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta?url=${teks}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -621,7 +621,6 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buff, video, {quoted: mek, caption: 'Nih Mank'})
 					break
                 case 'igpost':
-					if (args.length < 1) return reply('Username Nya Siapa OM?')
 					teks = body.slice(8)
 					reply('Tunggu Ya Kak')
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/insta_v2?username=${teks}`, {method: 'get'})
