@@ -679,16 +679,6 @@ client.on('group-participants-update', async (anu) => {
 						reply('[𝗘𝗥𝗥𝗢𝗥] 𝗸𝗲𝗺𝘂𝗻𝗴𝗸𝗶𝗻𝗮𝗻 𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝘁𝗶𝗱𝗮𝗸 𝘃𝗮𝗹𝗶𝗱')
 					}
 					break
-               case 'tiktokdown':
-					if (args.length < 1) return reply('Urlnya Mana Um?')
-					teks = body.slice(12)
-					reply(mess.wait)
-					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${teks}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					buff = await getBuffer(anu.url)
-					client.sendMessage(from, buff, video, {quoted: mek, caption: 'Nih Anjim'})
-                                        await limitAdd(sender)
-					 break
                 case 'pin':
 					if (args.length < 1) return reply('Urlnya Mana Um?')
 					teks = body.slice(5)
@@ -707,6 +697,16 @@ client.on('group-participants-update', async (anu) => {
 				pesan = arg.split('|')[1] 
 				pesan2 = arg.split('|')[2] 
                 reply(pesan, isi, pesan2)
+                break
+               case 'katabijak':
+               anu = await fetchJson(`https://arugaz.my.id/api/random/text/katabijak`, {method: 'get'})
+               reply(anu.result)
+               await limitAdd(sender)
+                break
+               case 'faktaunik':
+               anu = await fetchJson(`https://arugaz.my.id/api/random/text/katabijak`, {method: 'get'})
+               reply(anu.result)
+               await limitAdd(sender)
                 break
                  case 'linkgc':
 				    if (!isGroup) return reply(mess.only.group)
