@@ -638,7 +638,7 @@ client.on('group-participants-update', async (anu) => {
 					tempat = `*Tempat Lahir* : ${anu.tmp}`
 					kisah = `*Kisah* : ${anu.description}`
 					thumb = await getBuffer(anu.image_url)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks, usia, tahun, tempat, kisah})
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: kisah})
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
