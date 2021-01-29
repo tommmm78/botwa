@@ -634,11 +634,9 @@ client.on('group-participants-update', async (anu) => {
 					if (anu.error) return reply(anu.error)
 					teks = `*Nabi* : ${anu.name}`
 					usia = `*Usia* : ${anu.usia}`
-					tahun = `*Tahun Kelahiran* : ${anu.thn_kelahiran}`
 					tempat = `*Tempat Lahir* : ${anu.tmp}`
 					kisah = `*Kisah* : ${anu.description}`
-					thumb = await getBuffer(anu.image_url)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: kisah})
+					client.sendMessage(from, teks, usia, tempat, kisah, {quoted: mek})
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
