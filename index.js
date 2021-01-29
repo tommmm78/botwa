@@ -645,7 +645,7 @@ client.on('group-participants-update', async (anu) => {
                    tels = body.slice(11)
                    anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/kisahnabi/${tels}.json`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
-                   hasil = ` *Nabi : ${anu.name}\nTempat Lahir : ${anu.tmp}\nUsia : ${anu.usia}\nKisah : ${anu.description}`
+                   hasil = ` Nabi : ${anu.name}\nTempat Lahir : ${anu.tmp}\nUsia : ${anu.usia}\nKisah : ${anu.description}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
                 case 'cekganteng':
