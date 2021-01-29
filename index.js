@@ -744,7 +744,7 @@ client.on('group-participants-update', async (anu) => {
                     gatauda = body.slice(12)
                     anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktokpp?user=${gatauda}`)
 			        buff = await getBuffer(anu.result)
-                    client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'}
+                    client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
 			        break
 			    case 'map':
                 anu = await fetchJson(`https://mnazria.herokuapp.com/api/maps?search=${body.slice(5)}`, {method: 'get'})
