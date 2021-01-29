@@ -591,7 +591,7 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
-                                        await limitAdd(sender)
+                                        
 					break
                 case 'tiktokmp4':
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${args[0]}`, {method: 'get'})
@@ -628,15 +628,6 @@ client.on('group-participants-update', async (anu) => {
 					buff = await getBuffer(anu.resource.url)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
 					 break
-                case 'kisahnabi':
-                    text = body.slice(11)
-					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/kisahnabi/${text}.json`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `*Nabi* : ${anu.name}`
-					usia = `*Usia* : ${anu.usia}`
-					tempat = `*Tempat Lahir* : ${anu.tmp}`
-					kisah = `*Kisah* : ${anu.description}`
-					client.sendMessage(from, teks, usia, tempat, kisah, {quoted: mek})
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
@@ -644,20 +635,18 @@ client.on('group-participants-update', async (anu) => {
 						teks += `*Hastag* : ${i.hastag}\n*link* : ${i.link}\n*rank* : ${i.rank}\n*Tweet* : ${i.tweet}\n=================\n`
 					}
 					reply(teks.trim())
-                                        await limitAdd(sender)
 					break
                 case 'randomquran':
 					anu = await fetchJson(`https://api.banghasan.com/quran/format/json/acak`, {method: 'get'})
 					quran = `${anu.acak.ar.teks}\n\n${anu.acak.id.teks}\nQ.S ${anu.surat.nama} ayat ${anu.acak.id.ayat}`
 					client.sendMessage(from, quran, text, {quoted: mek})
 					break
-                case 'infocuaca':
+                case 'kisahnabi':
                    tels = body.slice(11)
-                   anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cuaca?wilayah=${tels}&apikey=BotWeA`, {method: 'get'})
+                   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/kisahnabi/${tels}.json`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
-                   hasil = ` *Tempat : ${anu.tempat}\nCuaca : ${anu.cuaca}\nAngin : ${anu.angin}\nSuhu : ${anu.suhu}\nKelembapan : ${anu.kelembapan}`
+                   hasil = ` *Nabi : ${anu.name}\nTempat Lahir : ${anu.tmp}\nUsia : ${anu.usia}\nKisah : ${anu.description}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
-                   await limitAdd(sender)
                    break
                 case 'cekganteng':
 					ganteng = body.slice(1)
@@ -676,7 +665,6 @@ client.on('group-participants-update', async (anu) => {
 					const wa =['penyayang','pemurah','Pemarah','Pemaaf','Penurut','Baik','baperan','Baik Hati','penyabar','Uwu','top deh, pokoknya','Suka Membantu']
 					const tak = wa[Math.floor(Math.random() * wa.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+watak+'*\n\nJawaban : '+ tak, text, { quoted: mek })
-                                        await limitAdd(sender)
 				    break
                 case 'hobby':
 					hobby = body.slice(1)
@@ -691,7 +679,6 @@ client.on('group-participants-update', async (anu) => {
                 if (data.result) return reply(data.result)
                 hasil = `╠➥ internasional : ${data.international}\n╠➥ nomor : ${data.nomor}\n╠➥ operator : ${data.op}`
                 reply(hasil)
-                await limitAdd(sender)
                 break
                 case 'closegc':
 					if (!isGroup) return reply(mess.only.group)
@@ -811,14 +798,12 @@ client.on('group-participants-update', async (anu) => {
 					tels = body.slice(6)
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/wiki?q=${tels}&apikey=BotWeA`, {method: 'get'})
 					reply(anu.result)
-                                        await limitAdd(sender)
 					break
 		case 'wikien':
 					if (args.length < 1) return reply('Kata kunci nya mana kak?')
 					tels = body.slice(8)
 					anu = await fetchJson(`https://arugaz.my.id/api/edu/enwiki?query=${tels}`, {method: 'get'})
 					reply(anu.result)
-                                        await limitAdd(sender)
 					break		
 				case 'ocr': 
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
@@ -952,7 +937,6 @@ client.on('group-participants-update', async (anu) => {
 					if (anu.error) return reply(anu.error)
 					buff = await getBuffer(anu.result)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
-                                        await limitAdd(sender)
 					 break
 				case 'fitnah':	
 				case 'fake':          
@@ -966,22 +950,18 @@ client.on('group-participants-update', async (anu) => {
                case 'katabijak':
                anu = await fetchJson(`https://arugaz.my.id/api/random/text/katabijak`, {method: 'get'})
                reply(anu.result)
-               await limitAdd(sender)
                 break
                case 'faktaunik':
                anu = await fetchJson(`https://arugaz.my.id/api/random/text/katabijak`, {method: 'get'})
                reply(anu.result)
-               await limitAdd(sender)
                 break
                 case 'kodeabsen':
                anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Absen.json`, {method: 'get'})
                reply(anu.absen)
-               await limitAdd(sender)
                 break
                  case 'nis279':
                anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Nis.json`, {method: 'get'})
                reply(anu.absen)
-               await limitAdd(sender)
                 break
                  case 'linkgc':
 				    if (!isGroup) return reply(mess.only.group)
@@ -1192,7 +1172,6 @@ client.on('group-participants-update', async (anu) => {
 					if (anu.error) return reply(anu.error)
 					buff = await getBuffer(anu.image)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
-                                        await limitAdd(sender)
 					 break
                  case 'simi':
 					if (args.length < 1) return reply('Textnya mana um?')
