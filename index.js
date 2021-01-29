@@ -655,6 +655,12 @@ client.on('group-participants-update', async (anu) => {
                    hasil = `${anu.verses.text}\n\n${anu.verses.translation_id}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
+		case 'doamakan':
+                   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/islamic-rest-api-indonesian/main/data/dataDoaHarian.json`, {method: 'get'})
+                   if (anu.error) return reply(anu.error)
+                   hasil = `${anu.data.title}\n${anu.data.arabic}\n${anu.data.latin}\n${anu.data.translation}`
+                   client.sendMessage(from, hasil, text, {quoted: mek})
+                   break
                 case 'cekganteng':
 					ganteng = body.slice(1)
 					const gan =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
