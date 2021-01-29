@@ -628,6 +628,17 @@ client.on('group-participants-update', async (anu) => {
 					buff = await getBuffer(anu.resource.url)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
 					 break
+                case 'kisahnabi':
+                    text = body.slice(11)
+					anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/kisahnabi/${text}.json`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					teks = `*Nabi* : ${anu.name}`
+					usia = `*Usia* : ${anu.usia}`
+					tahun = `*Tahun Kelahiran* : ${anu.thn_kelahiran}`
+					tempat = `*Tempat Lahir* : ${anu.tmp}`
+					kisah = `*Kisah* : ${anu.description}`
+					thumb = await getBuffer(anu.image_url)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks, usia, tahun, tempat, kisah})
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
