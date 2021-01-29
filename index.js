@@ -648,11 +648,18 @@ client.on('group-participants-update', async (anu) => {
                    hasil = ` Nabi : ${anu.name}\nTempat Lahir : ${anu.tmp}\nUsia : ${anu.usia}\nKisah : ${anu.description}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
+		case 'quran':
+                   tels = body.slice(7)
+                   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/hasil-scrapee-zhirrr/main/islam/surah/${tels}.json`, {method: 'get'})
+                   if (anu.error) return reply(anu.error)
+                   hasil = ` Nama Surah : ${anu.name}\nJumlah Ayat : ${anu.number_of_ayah}\nSurah Ke : ${anu.number_of_surah}\nTempat diturunkan : ${anu.place}\nGolongan Surah : ${anu.type}/n${anu.verses.text}/n/n${anu.translation_id}`
+                   client.sendMessage(from, hasil, text, {quoted: mek})
+                   break
                 case 'cekganteng':
 					ganteng = body.slice(1)
 					const gan =['10','30','20','40','50','60','70','62','74','83','97','100','29','94','75','82','41','39']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
-					client.sendMessage(from, 'Pertanyaan : *'+ganteng+'*\n\nJawaban : '+ teng+'%', text, { quoted: mek })
+					client.sendMessage(from, 'Pertanyaan : *'+ganteng+'*\n\nJawaban : '+ teng+'%', text, {quoted: mek})
 					break
                 case 'cekcantik':
 					cantik = body.slice(1)
