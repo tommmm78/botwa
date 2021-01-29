@@ -652,7 +652,7 @@ client.on('group-participants-update', async (anu) => {
                    tels = body.slice(7)
                    anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/hasil-scrapee-zhirrr/main/islam/surah/${tels}.json`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
-                   hasil = ` Nama Surah : ${anu.name}\nJumlah Ayat : ${anu.number_of_ayah}\nSurah Ke : ${anu.number_of_surah}\nTempat diturunkan : ${anu.place}\nGolongan Surah : ${anu.type}/nArab : ${anu.verses.text}/n/nArti : ${anu.verses.translation_id}`
+                   hasil = `${anu.verses.text}\n\n${anu.verses.translation_id}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
                 case 'cekganteng':
