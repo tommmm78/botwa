@@ -583,6 +583,16 @@ client.on('group-participants-update', async (anu) => {
 					buff = await getBuffer(anu.resource.url)
 					client.sendMessage(from, buff, image, {quoted: mek, caption: 'Nih Mank'})
 					 break
+		case 'joox':
+			tels = body.slice(6)
+                data = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${tels}&apikey=BotWeA`, {method: 'get'})
+               if (data.error) return reply(data.error)
+                 infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${data.result.judul}\nAlbum : ${data.result.album}\nDipublikasi : ${data.result.dipublikasi}`
+                buffer = await getBuffer(data.result.thumb)
+                lagu = await getBuffer(data.result.mp3)
+                client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+                client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${data.result.title}.mp3`, quoted: mek})
+                break
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
