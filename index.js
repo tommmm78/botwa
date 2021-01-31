@@ -387,10 +387,10 @@ client.on('group-participants-update', async (anu) => {
                                         client.sendMessage(from, teks, text, {quoted : mek})
                                         break
                  case 'coffee':
-                                        var gh = body.slice(7)
+                                        var gh = body.slice(8)
                                         var teks1 = gh.split("|")[0];
-                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}coffee ZahirGans')
-                                        reply(mess.wait)
+                                        if (args.length < 1) return reply('Teksnya Mana Om?\nContoh: ${prefix}coffee ZahirGans')
+                                        reply('Tunggu Ya Bwang')
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=coffee&text=${teks1}&apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
                                         client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nih Mank'})
