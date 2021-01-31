@@ -602,6 +602,12 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek, caption: `*PINTEREST*\n\*Hasil Pencarian* : *${tels}*`})
 					break
+		case 'send':
+					var pc = body.slice(6)
+					var nomor = pc.split("|")[0];
+					var pesan = pc.split("|")[1];
+					client.sendMessage(nomor+'@s.whatsapp.net', pesan, text)
+					break
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
