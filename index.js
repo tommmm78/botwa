@@ -285,7 +285,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'kapankah':
 					kapankah = body.slice(1)
-					const kapan =['Besok','Lusa','Tadi','4 Hari Lagi','5 Hari Lagi','6 Hari Lagi','1 Minggu Lagi','2 Minggu Lagi','3 Minggu Lagi','1 Bulan Lagi','2 Bulan Lagi','3 Bulan Lagi','4 Bulan Lagi','5 Bulan Lagi','6 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','6 Tahun Lagi','1 Abad lagi','3 Hari Lagi']
+					const kapan =['Besok','Lusa','Tadi','4 Hari Lagi','5 Hari Lagi','6 Hari Lagi','1 Minggu Lagi','2 Minggu Lagi','3 Minggu Lagi','1 Bulan Lagi','2 Bulan Lagi','3 Bulan Lagi','4 Bulan Lagi','5 Bulan Lagi','6 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','6 Tahun Lagi','1 Abad lagi','3 Hari Lagi','5 Abad Lagi','2 Abad Lagi']
 					const koh = kapan[Math.floor(Math.random() * kapan.length)]
 					client.sendMessage(from, 'Pertanyaan : *'+kapankah+'*\n\nJawaban : '+ koh, text, { quoted: mek })
 					break
@@ -375,7 +375,7 @@ client.on('group-participants-update', async (anu) => {
                    tels = body.slice(11)
                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cuaca?wilayah=${tels}&apikey=BotWeA`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
-                   hasil = ` *Tempat : ${anu.result.tempat}\nCuaca : ${anu.result.cuaca}\nAngin : ${anu.result.angin}\nSuhu : ${anu.result.suhu}\nKelembapan : ${anu.result.kelembapan}`
+                   hasil = ` Tempat : ${anu.result.tempat}\nCuaca : ${anu.result.cuaca}\nAngin : ${anu.result.angin}\nSuhu : ${anu.result.suhu}\nKelembapan : ${anu.result.kelembapan}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
 		case 'ip':
@@ -383,8 +383,17 @@ client.on('group-participants-update', async (anu) => {
                                         if (args.length < 1) return reply(`ip nya mana kak? \nContoh: ${prefix}ip 8.8.8.8`)
                                         anu = await fetchJson(`https://mnazria.herokuapp.com/api/check?ip=${ipnya}`, {method: 'get'})
                                         lang = anu.location.languages[0]
-                                        teks = `◪ *IP* \n  │\n  ├─ ❏ IP : ${anu.ip} \n  ├─ ❏ City : ${anu.city} \n  ├─ ❏ Continent Code : ${anu.continent_code} \n  ├─ ❏ Continent Name : ${anu.continent_name} \n  ├─ ❏ Country Code : ${anu.country_code} \n  ├─ ❏ Country Name : ${anu.country_name} \n  ├─ ❏ Latitude : ${anu.latitude} \n  ├─ ❏ Calling Code : ${anu.location.calling_code} \n  ├─ ❏ Capital : ${anu.location.capital} \n  ├─ ❏ Country Flag : ${anu.location.country_flag} \n  ├─ ❏ Country Flag Emoji : ${anu.location.country_flag_emoji} \n  ├─ ❏ Country Flag Emoji Unicode : ${anu.location.country_flag_emoji_unicode} \n  ├─ ❏ Geoname ID : ${anu.location.geoname_id} \n  ├─ ❏ Languages : ${lang.code} , ${lang.name} , ${lang.native} \n  ├─ ❏ Longitude : ${anu.longitude} \n  ├─ ❏ Region Code : ${anu.region_code} \n  ├─ ❏ Region Name : ${anu.region_name} \n  ├─ ❏ Type : ${anu.type} \n  └─ ❏ Zip : ${anu.zip} `
+                                        teks = `├─ ❏ IP : ${anu.ip} \n  ├─ ❏ City : ${anu.city} \n  ├─ ❏ Continent Code : ${anu.continent_code} \n  ├─ ❏ Continent Name : ${anu.continent_name} \n  ├─ ❏ Country Code : ${anu.country_code} \n  ├─ ❏ Country Name : ${anu.country_name} \n  ├─ ❏ Latitude : ${anu.latitude} \n  ├─ ❏ Calling Code : ${anu.location.calling_code} \n  ├─ ❏ Capital : ${anu.location.capital} \n  ├─ ❏ Country Flag : ${anu.location.country_flag} \n  ├─ ❏ Country Flag Emoji : ${anu.location.country_flag_emoji} \n  ├─ ❏ Country Flag Emoji Unicode : ${anu.location.country_flag_emoji_unicode} \n  ├─ ❏ Geoname ID : ${anu.location.geoname_id} \n  ├─ ❏ Languages : ${lang.code} , ${lang.name} , ${lang.native} \n  ├─ ❏ Longitude : ${anu.longitude} \n  ├─ ❏ Region Code : ${anu.region_code} \n  ├─ ❏ Region Name : ${anu.region_name} \n  ├─ ❏ Type : ${anu.type} \n  └─ ❏ Zip : ${anu.zip} `
                                         client.sendMessage(from, teks, text, {quoted : mek})
+                                        break
+                 case 'coffee':
+                                        var gh = body.slice(7)
+                                        var teks1 = gh.split("|")[0];
+                                        if (args.length < 1) return reply('teksnya mana um\nContoh: ${prefix}coffee ZahirGans')
+                                        reply(mess.wait)
+                                        anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=coffee&text=${teks1}&apikey=BotWeA`, {method: 'get'})
+                                        buffer = await getBuffer(anu.result)
+                                        client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nih Mank'})
                                         break
                  case 'phlogo':
 					var gh = body.slice(9)
@@ -553,7 +562,6 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
-                                        
 					break
                 case 'tiktokmp4':
 					anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${args[0]}`, {method: 'get'})
@@ -1047,7 +1055,7 @@ client.on('group-participants-update', async (anu) => {
                         if (!isBotGroupAdmins) return reply(mess.only.Badmin)
                        media = await client.downloadAndSaveMediaMessage(mek)
                          await client.updateProfilePicture (from, media)
-                        reply('𝗦𝘂𝗸𝘀𝗲𝘀 𝗺𝗲𝗻𝗴𝗴𝗮𝗻𝘁𝗶 𝗶𝗰𝗼𝗻 𝗚𝗿𝘂𝗽')
+                        reply('Makasih Profile Nya Boss 😎')
                 break						
 				case 'add':
 					if (!isGroup) return reply(mess.only.group)
