@@ -636,6 +636,13 @@ client.on('group-participants-update', async (anu) => {
                    hasil = ` Bacaan : ${anu.name}\n\n${anu.arabic}\n${anu.latin}\n${anu.terjemahan}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
+        case 'niatshalat':
+                   niat = body.slice(12)
+                   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/niatshalat/${niat}.json`, {method: 'get'})
+                   if (anu.error) return reply('Gak Bisa Ngambil Datanya Kak')
+                   hasil = ` Niat : ${anu.name}\n\n${anu.arabic}\n${anu.latin}\n${anu.terjemahan}`
+                   client.sendMessage(from, hasil, text, {quoted: mek})
+                   break
 		case 'quran':
                    tels = body.slice(7)
                    anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/hasil-scrapee-zhirrr/main/islam/surah/${tels}.json`, {method: 'get'})
@@ -1101,7 +1108,7 @@ client.on('group-participants-update', async (anu) => {
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝗧𝗮𝗴 𝘁𝗮𝗿𝗴𝗲𝘁 𝘆𝗮𝗻𝗴 𝗶𝗻𝗴𝗶𝗻 𝗱𝗶 𝘁𝗲𝗻𝗱𝗮𝗻𝗴!')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝗧𝗮𝗴 𝘁𝗮𝗿𝗴𝗲?? 𝘆𝗮𝗻𝗴 𝗶𝗻𝗴𝗶𝗻 𝗱𝗶 𝘁𝗲𝗻𝗱𝗮𝗻𝗴!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = ''
