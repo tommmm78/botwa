@@ -330,7 +330,7 @@ client.on('group-participants-update', async (anu) => {
 				case 'info':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nama bot* : ${me.name}\n*OWNER* : *ZHIRRR*\n*AUTHOR* : ZHIRRR\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
+					teks = `*Nama Bot* : ${me.name}\n*Owner* : *Zhirrr*\n*Author* : Zhirrr\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The Bot Is Active On* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
@@ -380,10 +380,10 @@ client.on('group-participants-update', async (anu) => {
                    break
 		case 'ip':
                                         ipnya = body.slice(4)
-                                        if (args.length < 1) return reply(`ip nya mana kak? \nContoh: ${prefix}ip 8.8.8.8`)
+                                        if (args.length < 1) return reply(`Ip Nya Mana Kak? \nContoh: ${prefix}ip 8.8.8.8`)
                                         anu = await fetchJson(`https://mnazria.herokuapp.com/api/check?ip=${ipnya}`, {method: 'get'})
                                         lang = anu.location.languages[0]
-                                        teks = `├─ ❏ IP : ${anu.ip} \n  ├─ ❏ City : ${anu.city} \n  ├─ ❏ Continent Code : ${anu.continent_code} \n  ├─ ❏ Continent Name : ${anu.continent_name} \n  ├─ ❏ Country Code : ${anu.country_code} \n  ├─ ❏ Country Name : ${anu.country_name} \n  ├─ ❏ Latitude : ${anu.latitude} \n  ├─ ❏ Calling Code : ${anu.location.calling_code} \n  ├─ ❏ Capital : ${anu.location.capital} \n  ├─ ❏ Country Flag : ${anu.location.country_flag} \n  ├─ ❏ Country Flag Emoji : ${anu.location.country_flag_emoji} \n  ├─ ❏ Country Flag Emoji Unicode : ${anu.location.country_flag_emoji_unicode} \n  ├─ ❏ Geoname ID : ${anu.location.geoname_id} \n  ├─ ❏ Languages : ${lang.code} , ${lang.name} , ${lang.native} \n  ├─ ❏ Longitude : ${anu.longitude} \n  ├─ ❏ Region Code : ${anu.region_code} \n  ├─ ❏ Region Name : ${anu.region_name} \n  ├─ ❏ Type : ${anu.type} \n  └─ ❏ Zip : ${anu.zip} `
+                                        teks = `IP : ${anu.ip}/nCity : ${anu.city}/nContinent Code : ${anu.continent_code}/nContinent Name : ${anu.continent_name}/nCountry Code : ${anu.country_code}/nCountry Name : ${anu.country_name}/nLatitude : ${anu.latitude}/nCalling Code : ${anu.location.calling_code}/nCapital : ${anu.location.capital}/nCountry Flag : ${anu.location.country_flag}/nCountry Flag Emoji : ${anu.location.country_flag_emoji}/nCountry Flag Emoji Unicode : ${anu.location.country_flag_emoji_unicode}/nGeoname ID : ${anu.location.geoname_id}/nLanguages : ${lang.code} , ${lang.name} , ${lang.native}/nLongitude : ${anu.longitude}\nRegion Code : ${anu.region_code}/nRegion Name : ${anu.region_name}/nType : ${anu.type}/nZip : ${anu.zip} `
                                         client.sendMessage(from, teks, text, {quoted : mek})
                                         break
                  case 'coffee':
@@ -416,15 +416,7 @@ client.on('group-participants-update', async (anu) => {
 					const der = dare[Math.floor(Math.random() * dare.length)]
 					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*Dare*\n\n'+ der })
-					break				
-				case 'waifu':
-				   if (!isGroup) return reply(mess.only.group)
-                   if (!isNsfw) return reply('nsfw gak aktif')
-				   anu = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`)
-				   buf = await getBuffer(anu.image)
-				   texs = ` *anime name* : ${anu.name} \n*deskripsi* : ${anu.desc} \n*source* : ${anu.source}`
-				   client.sendMessage(from, buf, image, { quoted: mek, caption: `${texs}` })
-				break
+					break
                 case 'bug':
                      const pesan = body.slice(5)
                       if (pesan.length > 300) return client.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', msgType.text, {quoted: mek})
@@ -617,12 +609,6 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek, caption: `*PINTEREST*\n\*Hasil Pencarian* : *${tels}*`})
 					break
-		case 'send':
-					var pc = body.slice(6)
-					var nomor = pc.split("|")[0];
-					var anjay = pc.split("|")[1];
-					client.sendMessage(nomor+'@s.whatsapp.net', anjay, text, {quoted: mek})
-					break
                 case 'trendtwit':
 					data = await fetchJson(`https://docs-jojo.herokuapp.com/api/trendingtwitter`, {method: 'get'})
 					teks = '=================\n'
@@ -641,6 +627,13 @@ client.on('group-participants-update', async (anu) => {
                    anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/kisahnabi/${tels}.json`, {method: 'get'})
                    if (anu.error) return reply(anu.error)
                    hasil = ` Nabi : ${anu.name}\nTanggal Lahir : ${anu.thn_kelahiran}\nTempat Lahir : ${anu.tmp}\nUsia : ${anu.usia}\nKisah : ${anu.description}`
+                   client.sendMessage(from, hasil, text, {quoted: mek})
+                   break
+        case 'bacaanshalat':
+                   bacaan = body.slice(14)
+                   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/bacaanshalat/${bacaan}.json`, {method: 'get'})
+                   if (anu.error) return reply('Gak Bisa Ngambil Datanya Kak')
+                   hasil = ` Bacaan : ${anu.name}\n\n${anu.arabic}\n${anu.latin}\n${anu.terjemahan}`
                    client.sendMessage(from, hasil, text, {quoted: mek})
                    break
 		case 'quran':
@@ -939,7 +932,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'tiktokstalk':
 					try {
-						if (args.length < 1) return client.sendMessage(from, '𝘂𝘀𝗲𝗿𝗻𝗮𝗺𝗲 𝗺𝗮𝗻𝗮 ?', text, {quoted: mek})
+						if (args.length < 1) return client.sendMessage(from, '𝘂𝘀𝗲𝗿??𝗮𝗺𝗲 𝗺𝗮𝗻𝗮 ?', text, {quoted: mek})
 						let { user, stats } = await tiktod.getUserProfileInfo(args[0])
 						reply('Tunggu Ya Kak')
 						teks = `*ID* : ${user.id}\n*Username* : ${user.uniqueId}\n*Nickname* : ${user.nickname}\n*Followers* : ${stats.followerCount}\n*Followings* : ${stats.followingCount}\n*Posts* : ${stats.videoCount}\n*Luv* : ${stats.heart}\n`
