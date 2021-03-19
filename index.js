@@ -28,9 +28,9 @@ const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN: Zhirrr\n' 
-            + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6283898698875:+62 838-9869-8875\n' 
+            + 'FN: 𓎎⃢꙰⃟𓎎꙰⛦⸸ᮬ𝖇ͭ𝖔ͦ𝖙ͫ⸸ᮬ⛦𓎎⃢꙰⃟𓎎꙰\n' 
+            + 'ORG: 𓎎⃢꙰⃟𓎎꙰⛦⸸ᮬ𝖇ͭ𝖔ͦ𝖙ͫ⸸ᮬ⛦𓎎⃢꙰⃟𓎎꙰;\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=64275559999:+64 27 555 9999\n' 
             + 'END:VCARD' 
 prefix = '#'
 blocked = []          
@@ -218,7 +218,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6283898698875@s.whatsapp.net"] 
+			const ownerNumber = ["64275559999@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
